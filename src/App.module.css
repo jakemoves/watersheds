@@ -1,3 +1,48 @@
+.controls {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.controls input, .controls label {
+  cursor: pointer;
+}
+
+.controls input:disabled {
+  cursor: default;
+}
+
+#allLabel {
+  color: gray;
+  cursor: default;
+}
+
+.graphFrame {
+  padding: 5px;
+}
+
+/* .legendCircle {
+  display: inline-block;
+} */
+
+dt {
+  float: left;
+}
+
+dd {
+  margin-inline-start: 20px;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+table th {
+  border-bottom: 1px solid gray;
+}
+
+table th {
+  text-align: left;
+}
 
 .purchase {
   font-weight: bold;
