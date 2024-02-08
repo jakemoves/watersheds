@@ -34,7 +34,7 @@ function App() {
   }
   
   return (
-    <div>
+    <div id={styles.wrapper}>
       <h1>Buyer journeys in automotive</h1>
       <div class={styles.controls}>
         <fieldset>
@@ -65,8 +65,8 @@ function App() {
         </fieldset>
       </div>
       <div class={styles.graphFrame}>
-        <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg" role="img" aria-describedby="graphTitle" tabindex="0">
-          <title id="graphTitle">{`A graph showing the buyer journey for ${purchaseChains.length} ${currentTierOne()} customers.`}</title>
+        <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg" role="img" tabindex="0">
+          <title>{`A graph showing the buyer journey for ${purchaseChains.length} ${currentTierOne()} customers.`}</title>
           
           {purchaseChains
             .filter(chain => chain[chain.length-1].brand == currentTierOne())
@@ -131,17 +131,24 @@ function App() {
         <div>
           <dl>
             <dt>
-              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="legendCircle" title="a black circle, indicating a younger buyer">
+              <svg width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg" class="legendCircle">
+                <title>a black circle, indicating a younger buyer</title>
                 <circle cx="6" cy="6" fill="black" r="5"></circle>
               </svg>
               </dt>
             <dd>younger buyer</dd>
             <dt>
-              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="legendCircle" title="a light grey circle, indicating an older buyer">
+              <svg width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg">
+                <title>a light grey circle, indicating an older buyer</title>
                 <circle cx="6" cy="6" fill="gray" r="5"></circle>
               </svg>
               </dt>
             <dd>older buyer</dd>
+            <dt><svg width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg">
+                <title>a red line, indicating a failure to close a sale</title>
+                <line x1="0" x2="12" y1="6" y2="6" cy="6" stroke="red"></line>
+              </svg></dt>
+              <dd>no sale</dd>
           </dl>
         </div>
       </div>
