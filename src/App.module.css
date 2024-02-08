@@ -7,6 +7,7 @@
 }
 
 .controls {
+  /* could be flex here */
   display: grid;
   grid-template-columns: 50% 50%;
 }

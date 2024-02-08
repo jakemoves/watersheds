@@ -128,6 +128,7 @@ function App() {
           })}
         </svg>
 
+        {/* table legend */}
         <div>
           <dl>
             <dt>
@@ -140,7 +141,7 @@ function App() {
             <dt>
               <svg width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg">
                 <title>a light grey circle, indicating an older buyer</title>
-                <circle cx="6" cy="6" fill="gray" r="5"></circle>
+                <circle cx="6" cy="6" fill="#ddd" r="5"></circle>
               </svg>
               </dt>
             <dd>older buyer</dd>
@@ -152,6 +153,7 @@ function App() {
           </dl>
         </div>
       </div>
+
       <table>
         <caption>Raw data for 100 buyer journeys</caption>
         <tbody>
@@ -219,6 +221,7 @@ function createDummyData(tierOnes, surfaces){
       brand: brand
     }
     
+    // research showed there can be hundreds of touchpoints towards an auto sale. we'll take a smaller range (2-15)
     const touchpoints = Array(Math.floor(Math.random() * 14) + 2).fill()
       .map( touchpoint => {
         return {
